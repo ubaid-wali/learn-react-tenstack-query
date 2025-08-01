@@ -1,0 +1,54 @@
+Data Fetching
+Caching
+Mutations
+Pagination
+Refetching
+
+
+Tenstack query
+(react query)
+
+It's a library that helps you manage the state of data you fetch form servers, like API,s in your react applications.
+
+One to the most powerful tools for managing server-sie state in React.
+
+
+HTTP Request 
+-> We ge a Response
+
+We get a Response
+<-
+
+useState
+useEffect
+contextAPI
+
+
+Advantages
+-Data Fetching made Easy. with a simple useQuery hook, fetching data becomes super easy.
+-Built-in Loading and Error States: No need to write custom code for handling loading, error, or success states.
+-Automatic Cahing: React Query automatically caches your data.
+-Background refetching: if your data gets stale or out of date, TanStack Query can refetch it in the background.
+-Pagination and Infinite Scrolling: Handlnig pagination or infinite scrolling? React Query has you covered with tools specifically designed for those complex use cases.
+
+Verdict
+Tanstack query maks working with server-side data in react a breeze. it's fast, efficient and reduces the amount of boilerplate code you need to write. If you working working on any app that relies on API data, this tool is an absolute game-changer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
