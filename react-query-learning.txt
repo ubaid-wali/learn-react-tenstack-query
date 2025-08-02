@@ -35,6 +35,110 @@ Verdict
 Tanstack query maks working with server-side data in react a breeze. it's fast, efficient and reduces the amount of boilerplate code you need to write. If you working working on any app that relies on API data, this tool is an absolute game-changer.
 
 
+In React Query, the QueryClientProvider is a crucial component that provides a QueryClient instance to your React application
+This QueryClient is responsible for managing all the data fetching, caching, and state management related to your queries.
+
+
+Query Client:
+Query Client: It is the core part of the react-query library. It manages the caching, background fetching, data synchronization, and other query-related logic. It provides a centralized store for managing and caching asynchronous data in your application.
+
+new QueryClient(): This creates a QueryClient instance with default settings. You can configure it with options if needed (e.g setting cache time, stale time etc.)
+
+QueryClientProvider: This component is part of the react-query and is used to provide the QueryClient instance to your entire React app (or a portion of it). This makes the query client available via React's context API so that all the components in the tree can use the useQuery, useMutation, and other hooks provided by react-query.
+
+QueryKey
+The queryKey is typically an array or string that uniquely identifies a query. It allows React Query to determine if the data in the cache is associated with a particular request.
+
+it is used to cache data with a specific key and refetch or update data when certain dependencies change.
+
+useQuery: Fetches and reads data (GET requests) from an API adn automatically cache the result.
+
+useMutation: Used for creating, updating, or deleting data (POST, PUT, DELETE requests) and allows triggering manual side effects.
+
+gcTime = (garbage Collection Time)
+In React Query v5, the cacheTime option in React Query has been renamed to gcTime.
+
+When you use React Query to get data, it saves the results in a local cache. This means if you ask for the same data again, React Query will give you the save data instead of making another API request. THe cache updates automatically if the data changes, so you always get the latest information.
+
+Use Case: Imagine our fetching a list of users. if you go back to the same page, React Query will show the saved list from the cache instead of reloading it from the server, making your app faster. If a new user is added, React Query will automatically update the list. 
+
+By default, inactive queries are garbage collected after 5 minutes. This means that it is query is not being used for 5 minutes. The cache for that query will be cleaned up.
+
+Local Storage vs Session Storage vs cache storage.
+
+Stale Time
+Stale (Basi)
+In React Query, staleTime is a configuration option that determines how long fetched data is considered fresh before it needs to be refetched.
+
+Here's how it works:
+
+Fresh Data:
+when dta is initially fetched or updated, it's considered fresh.
+
+Stale Data:
+After the staleTime duration (specified in milliseconds) elapses, the data is considered
+
+Default Value:
+The default staleTime is 0, meaning data becomes stale immediately after being fetch. This ensure data is always up-to-date but can lead to frequent refetching.
+
+Polling in React Query
+In React Query, polling refers to the technique of fetching data from an API at regular intervals to keep the UI up-to-date with the latest information. This is especially useful for scenarios where data changes frequently and you want to display real-time updates without requiring the user to manually refresh the page.
+
+'refetchInterval' option: the simplest way to enable polling is to pass the `refetchInterval` option to the `useQuery` hook. This option specified the interval (in milliseconds) at which React Query should automatically refetch the data.
+
+// When you want to fetch the data even in background or you are in another tab. 
+refetchIntervalInBackground option: if you want to continue polling even when the component is not mounted, you can use the `refetchIntervalInBackground` option.
+
+useMutation
+The useMutation hook is part of React Query and is used for operations that modify data, like Create, Update, and Delete (CRUD operations).
+
+Syntax: const mutation = useMutation(mutationFn, { //Optional configuration options})
+
+We can provide various configuration options to customize the behavior of the mutation, such as: 
+
+onSuccess: A callback function that runs when the mutation is successful
+onError: A call back function that runs if the mutation fails.
+onSettled: A callback function that runs regardless of success or failure.
+mutationKey: A unique key to identify the mutation in the cache.
+
+CRUD: Create, Read, Update, Delete.
+
+useMutation is used to modify or send data to a server (create, update, or delete operations).
+
+useQuery is used to fetch and cache data from a server (read operation).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
