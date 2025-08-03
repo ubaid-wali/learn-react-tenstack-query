@@ -27,12 +27,12 @@ contextAPI
 Advantages
 -Data Fetching made Easy. with a simple useQuery hook, fetching data becomes super easy.
 -Built-in Loading and Error States: No need to write custom code for handling loading, error, or success states.
--Automatic Cahing: React Query automatically caches your data.
+-Automatic Caching: React Query automatically caches your data.
 -Background refetching: if your data gets stale or out of date, TanStack Query can refetch it in the background.
--Pagination and Infinite Scrolling: Handlnig pagination or infinite scrolling? React Query has you covered with tools specifically designed for those complex use cases.
+-Pagination and Infinite Scrolling: handling pagination or infinite scrolling? React Query has you covered with tools specifically designed for those complex use cases.
 
 Verdict
-Tanstack query maks working with server-side data in react a breeze. it's fast, efficient and reduces the amount of boilerplate code you need to write. If you working working on any app that relies on API data, this tool is an absolute game-changer.
+Tanstack query makes working with server-side data in react a breeze. it's fast, efficient and reduces the amount of boilerplate code you need to write. If you working working on any app that relies on API data, this tool is an absolute game-changer.
 
 
 In React Query, the QueryClientProvider is a crucial component that provides a QueryClient instance to your React application
@@ -106,6 +106,86 @@ CRUD: Create, Read, Update, Delete.
 useMutation is used to modify or send data to a server (create, update, or delete operations).
 
 useQuery is used to fetch and cache data from a server (read operation).
+
+
+Mutate()
+The mutate() function is used to execute the mutation in React Query.
+The process is the same whether you're:
+
+Deleting data
+Updating data
+Creating new data
+
+
+when you call .mutate(). it tells React Query to run the mutation function defined inside the useMutation hook. This is needed because the mutation is an action that changes data, unlike queries, which are used to fetch data and are often auto-executed.
+
+Delete data from local Cache
+
+queryClient.setQueryData is used to update the cached data fro a specific query. In this case, it's the query with the key ["post, pageNumber], which likely represents the list of posts on the current page.
+
+
+Update Post React Query
+
+
+Infinite Scrolling React
+
+useInfiniteQuery
+First Render ... QueryFn will Fetch the 1st page ...getNextPageParam React bottom && hadNextPage... Calculate the Page No. will Fetch the 1st page
+
+First Render 
+QueryFn will Fetch the 1st Page 
+getNextPageParam 
+Calculate the Page No.
+React Bottom && hasNextPage
+fetchNextPage
+
+
+Scroll Events
+window.innerHeight: The height of the visible part of the webpage (the viewport).
+
+window.scrollY: the amount of pixels the user has scrolled down the page.
+
+document.documentElement.scrollHeight: The total height of the webpage, including the part not visible without scrolling.
+
+When the sum of window.innerHeight and window.scrollY is approximately equal to document.documentElement.ScrollHeight -1, the user is near the bottom of the page.
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
